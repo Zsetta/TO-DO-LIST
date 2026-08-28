@@ -57,7 +57,11 @@ li{
     
 }
 
-.lista li .deleteB{
+.lista li {
+    touch-action: none;
+    user-select: none;
+}
+.deleteB{
     touch-action: none;
     user-select: none;
 }
