@@ -12,16 +12,14 @@ const recorrer = () => {
     }
     for(const li of lista.children)
     {
-    li.addEventListener("dragstart",(e)=>{
-        setTimeout(()=>{
-            e.target.classList.add("moving");
-            
-        },0);
+    li.addEventListener("pointerdown",(e)=>{      
+        e.target.classList.add("moving");
     });
-    li.addEventListener("dragover",(e)=>{
+    li.addEventListener("pointermove",(e)=>{
         e.preventDefault();
         let datos = e.target.getBoundingClientRect();
         let l = document.querySelector(".moving");
+        
         if(e.clientY >= datos.y + datos.height/2)
         { 
             li.parentElement.insertBefore(l,e.target.nextElementSibling);
@@ -31,7 +29,7 @@ const recorrer = () => {
             li.parentElement.insertBefore(l,e.target);
         }
     });
-    li.addEventListener("dragend",(e)=>{
+    li.addEventListener("pointerup",(e)=>{
         e.target.classList.remove("moving");
     });
     }

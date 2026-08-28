@@ -54,6 +54,10 @@ li{
 }
 
 .moving{
-    background-color: rgb(255, 230, 162);
-    color: rgb(255, 230, 162);
+    
+}
+
+.lista li {
+    touch-action: none;
+    user-select: none;
 }
